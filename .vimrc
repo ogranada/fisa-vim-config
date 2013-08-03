@@ -78,7 +78,10 @@ Bundle 'airblade/vim-gitgutter'
 " Autocompletion
 Bundle 'AutoComplPop'
 " Python code checker
-Bundle 'pyflakes.vim'
+" pyflakes is deprecated
+" Bundle 'pyflakes.vim'
+Bundle 'tpope/vim-pathogen'
+Bundle 'scrooloose/syntastic'
 " Search results counter
 Bundle 'IndexedSearch'
 " XML/HTML tags navigation
@@ -94,6 +97,12 @@ if iCanHazVundle == 0
     echo ""
     :BundleInstall
 endif
+
+" pathogen execution
+execute pathogen#infect()
+
+" I need Syntax Highlight ever...
+syntax on
 
 " allow plugins by file type
 filetype plugin on
